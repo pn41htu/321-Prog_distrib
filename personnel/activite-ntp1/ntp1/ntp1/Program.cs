@@ -22,23 +22,51 @@ namespace ntp1
             UdpClient client = new UdpClient();
             client.Connect(ntpReference);
 
-            client.Send(timeMessage, timeMessage.Length);
+            using (client)
+            {
 
-            timeMessage = client.Receive(ref ntpReference);
+                client.Send(timeMessage, timeMessage.Length);
 
-            Console.WriteLine(timeMessage); //doesnt work
+                timeMessage = client.Receive(ref ntpReference);
 
-            DateTime ntpTime = NtpPacket.ToDateTime(timeMessage);
+                Console.WriteLine(timeMessage); //doesnt work
 
-            Console.WriteLine($"Heure actuelle (format 1) : { ntpTime}");
-            Console.WriteLine($"Heure actuelle (format 2) : {ntpTime.ToString("dddd, d MMMM yyyy")}");
-            Console.WriteLine($"Heure actuelle (format 3) : {ntpTime.ToString("d")}");
+                DateTime ntpTime = NtpPacket.ToDateTime(timeMessage);
 
-            Console.WriteLine($"Heure actuelle (format ISO 8601) : {ntpTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")}");
+                Console.WriteLine($"Heure actuelle (format 1) : {ntpTime}");
+                Console.WriteLine($"Heure actuelle (format 2) : {ntpTime.ToString("dddd, d MMMM yyyy")}");
+                Console.WriteLine($"Heure actuelle (format 3) : {ntpTime.ToString("d")}");
+
+                Console.WriteLine($"Heure actuelle (format ISO 8601) : {ntpTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")}");
+
+                DateTime dateTimeLocal = DateTime.UtcNow;
+
+                TimeSpan timeDifference = dateTimeLocal - ntpTime;
+
+                Console.WriteLine($"Différence de temps : {timeDifference.TotalSeconds:F10} secondes");
+
+                dateTimeLocal = TimeZoneInfo.ConvertTimeFromUtc(ntpTime, TimeZoneInfo.Local);
+
+                Console.WriteLine(dateTimeLocal);
+
+                //ex 3
+                TimeZoneInfo swissTimeZone = TimeZoneInfo.FindSystemTimeZoneById("W. Europe Standard Time");
+
+                DateTime swissTime = TimeZoneInfo.ConvertTimeFromUtc(ntpTime, swissTimeZone);
+
+                Console.WriteLine("Heure Suisse : " + swissTime);
+
+                //ex 4
+
+                ntpTime = TimeZoneInfo.ConvertTimeFromUtc(ntpTime, TimeZoneInfo.FindSystemTimeZoneById("UTC"));
+
+                Console.WriteLine("Heure UTC : " + ntpTime);
 
 
+                client.Close();
 
-            client.Close();
+            }
+
         }
     }
 
