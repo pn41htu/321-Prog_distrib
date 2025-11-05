@@ -9,21 +9,21 @@ namespace ntp1
     {
         static void Main(string[] args)
         {
-            string ntpServer = "0.ch.pool.ntp.org";
-            Console.WriteLine(ntpServer);
 
-            byte[] timeMessage = new byte[48];
-            timeMessage[0] = 0x1B; //LI = 0 (no warning), VN = 3 (IPv4 only), Mode = 3 (Client Mode)
 
-            Console.WriteLine(timeMessage[0]);
-
-            IPEndPoint ntpReference = new IPEndPoint(Dns.GetHostAddresses(ntpServer)[0], 123);
-
-            UdpClient client = new UdpClient();
-            client.Connect(ntpReference);
-
-            using (client)
+            using (UdpClient client = new UdpClient())
             {
+                string ntpServer = "0.ch.pool.ntp.org";
+                Console.WriteLine(ntpServer);
+
+                byte[] timeMessage = new byte[48];
+                timeMessage[0] = 0x1B; //LI = 0 (no warning), VN = 3 (IPv4 only), Mode = 3 (Client Mode)
+
+                Console.WriteLine(timeMessage[0]);
+
+                IPEndPoint ntpReference = new IPEndPoint(Dns.GetHostAddresses(ntpServer)[0], 123);
+
+                client.Connect(ntpReference);
 
                 client.Send(timeMessage, timeMessage.Length);
 
