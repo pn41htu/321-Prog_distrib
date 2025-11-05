@@ -13,15 +13,23 @@ namespace ntp1
 
             using (UdpClient client = new UdpClient())
             {
-                string ntpServer = "0.ch.pool.ntp.org";
-                Console.WriteLine(ntpServer);
+
+                // NTP Server Pool and Reliability
+                string[] ntpServers = {
+                    "0.pool.ntp.org",
+                    "1.pool.ntp.org",
+                    "time.google.com",
+                    "time.cloudflare.com"
+                };
+
+                Console.WriteLine(ntpServers[0]);
 
                 byte[] timeMessage = new byte[48];
                 timeMessage[0] = 0x1B; //LI = 0 (no warning), VN = 3 (IPv4 only), Mode = 3 (Client Mode)
 
                 Console.WriteLine(timeMessage[0]);
 
-                IPEndPoint ntpReference = new IPEndPoint(Dns.GetHostAddresses(ntpServer)[0], 123);
+                IPEndPoint ntpReference = new IPEndPoint(Dns.GetHostAddresses(ntpServers[3])[0], 123);
 
                 client.Connect(ntpReference);
 
