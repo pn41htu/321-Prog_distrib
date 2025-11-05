@@ -34,6 +34,9 @@ namespace ntp1
             Console.WriteLine($"Heure actuelle (format 2) : {ntpTime.ToString("dddd, d MMMM yyyy")}");
             Console.WriteLine($"Heure actuelle (format 3) : {ntpTime.ToString("d")}");
 
+            Console.WriteLine($"Heure actuelle (format ISO 8601) : {ntpTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'")}");
+
+
 
             client.Close();
         }
