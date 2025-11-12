@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataModel.Appliance">
+    <Position X="8" Y="1" Width="1.5" />
+    <Members>
+      <Method Name="Appliance" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Equipment\Appliance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataModel.ConsumingAppliance">
+    <Position X="3.5" Y="3.25" Width="1.75" />
+    <Members>
+      <Method Name="ConsumingAppliance" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Schedule" Type="DataModel.WorkingSchedule">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.329" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAEABAAAAAAEAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Equipment\ConsumingAppliance.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Schedule" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataModel.ApplianceProductDescription">
+    <Position X="3.25" Y="6.25" Width="2.5" />
+    <Members>
+      <Method Name="ApplianceProductDescription" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAEAAAAAAQAAAAAABAAAAgAAAABAAA=</HashCode>
+      <FileName>Equipment\ApplianceProductDescription.cs</FileName>
+      <NewMemberFileName>Equipment\ConsumingApplianceDescription.cs</NewMemberFileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataModel.ProductiveAppliance">
+    <Position X="7.5" Y="3.25" Width="1.75" />
+    <Members>
+      <Method Name="ProductiveAppliance" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Description" Type="DataModel.ProductiveApplianceDescription">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.216" Y="0.86" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Equipment\ProductiveAppliance.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Description" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataModel.ProductiveApplianceDescription">
+    <Position X="7.25" Y="6.25" Width="2.5" />
+    <Members>
+      <Method Name="ProductiveApplianceDescription" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAEAAAAAAAAAAAgAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Equipment\ProductiveApplianceDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataModel.Storage">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <Members>
+      <Method Name="Storage" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Description" Type="DataModel.StorageDescription">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.039" Y="0.412" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgBAAAAAAAAAAAAAAAAAAAAAEAAAAAAAg=</HashCode>
+      <FileName>Equipment\Storage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Description" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataModel.StorageDescription">
+    <Position X="11.5" Y="6.25" Width="1.75" />
+    <Members>
+      <Method Name="StorageDescription" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAACAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Equipment\StorageDescription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataModel.WorkingSchedule">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <AssociationLine Name="_periods" Type="DataModel.WorkingTime">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.107" Y="0.912" Height="0.182" Width="0.945" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAECAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorkingSchedule.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_periods" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="DataModel.WorkingTime">
+    <Position X="0.5" Y="7" Width="2" />
+    <Members>
+      <Method Name="WorkingTime" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>WorkingTime.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

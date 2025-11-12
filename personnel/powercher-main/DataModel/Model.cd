@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataModel.House">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="_appliances" Type="DataModel.Appliance">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.548" Y="0.07" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="UPS" Type="DataModel.Storage" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.438" Y="2.824" />
+        <Point X="4.438" Y="4.581" />
+        <Point X="2" Y="4.581" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.945" Y="0.089" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAEAQCAAAgQIAAAAgAAAAAAAIAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>House.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UPS" />
+      <Property Name="Environment" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_appliances" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="DataModel.TownEnvironment">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAIAAAAAAAAAAEAAAQAAAAAAQAIAAAAAAAAAA=</HashCode>
+      <FileName>TownEnvironment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="WindDirection" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataModel.Appliance">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Equipment\Appliance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataModel.CashTransaction">
+    <Position X="8.75" Y="6.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Type" Type="DataModel.CashTransactionType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.235" Y="0.081" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAQAAAACAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <FileName>CashTransaction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataModel.PowerTransaction">
+    <Position X="8.75" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAEAQAAAACAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <FileName>PowerTransaction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataModel.Storage">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgBAAAAAAAAAAAAAAAAAAAAAEAAAAAAAg=</HashCode>
+      <FileName>Equipment\Storage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DataModel.WindDirections">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACEAAAAAAAAAAAQgAAAAAAAAAAhCIAAA=</HashCode>
+      <FileName>TownEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataModel.CashTransactionType">
+    <Position X="5.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CashTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataModel.PowerTransactionType">
+    <Position X="5.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAFAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PowerTransaction.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

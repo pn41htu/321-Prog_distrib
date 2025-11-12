@@ -1,0 +1,24 @@
+using Microsoft.Extensions.Logging;
+
+namespace Frontend;
+
+static class Program
+{
+    /// <summary>
+    ///  The main entry point for the application.
+    /// </summary>
+    [STAThread]
+    static void Main(string[] args)
+    {
+        // To customize application configuration such as set high DPI settings or default font,
+        // see https://aka.ms/applicationconfiguration.
+        ApplicationConfiguration.Initialize();
+
+        var loggerFactory = LoggerFactory.Create(
+            builder => builder
+                .AddConsole()
+                .SetMinimumLevel(args.Contains("--debug") ? LogLevel.Debug : LogLevel.Information));
+
+        Application.Run(new BootstrapUI(loggerFactory));
+    }
+}

@@ -1,0 +1,76 @@
+{
+    "metadata": [
+      {
+        "src": [
+          {
+            "files": [
+              "*.cs"  
+            ],
+            "cwd": "C:\\Users\\px05iql\\Documents\\GitHub\\321-Powercher\\DataModel" 
+          }
+        ],
+        "dest": "api",
+        "disableGitFeatures": false,
+        "disableDefaultFilter": false,
+        "pdf": true
+      }
+    ],
+    "build": {
+      "content": [
+        {
+          "files": [
+            "api/**.yml",
+            "api/index.md"
+          ]
+        },
+        {
+          "files": [
+            "articles/**.md",
+            "articles/**/toc.yml",
+            "toc.yml",
+            "*.md"
+          ]
+        }
+      ],
+      "resource": [
+        {
+          "files": [
+            "images/**"
+          ]
+        }
+      ],
+      "overwrite": [
+        {
+          "files": [
+            "apidoc/**.md"
+          ],
+          "exclude": [
+            "obj/**",
+            "_site/**"
+          ]
+        }
+      ],
+      "dest": "_site",
+      "globalMetadataFiles": [],
+      "fileMetadataFiles": [],
+      "template": [
+        "default"
+      ],
+      "postProcessors": [],
+      "markdownEngineName": "markdig",
+      "noLangKeyword": false,
+      "keepFileLink": false,
+      "cleanupCacheHistory": false,
+      "disableGitFeatures": false,
+      "globalMetadata": {
+        "_appName": "powercher",
+        "_appTitle": "powercher",
+        "_enableSearch": true,
+        "pdf": true,  
+        "_pdfOutput": "pdf", 
+        "_pdfFilename": "Powercher.pdf"  
+      }
+  
+    }
+  }
+  
