@@ -1,10 +1,12 @@
 ﻿
-using System.Text.Json;
 using Backend;
 using Backend.Protocol;
 using DataModel;
 using Frontend.Logging;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Reflection;
+using System.Text.Json;
 
 namespace Frontend
 {
@@ -30,7 +32,9 @@ namespace Frontend
             this.Text = $@"House {_agent.NodeId}";
             
             //Business components
-            _house = new House(_agent.NodeId,"TODO","TODO");
+            _house = new House(_agent.NodeId,"pn41htu","La maison de pn41htu");
+
+            this.owner.Text = "pn41htu - " + _agent.NodeId.Substring(0,5);
 
         }
         
@@ -54,6 +58,23 @@ namespace Frontend
                     break;
                 case MessageType.HOUSE_STATUS_REQUEST:
                     _agent.Send(new Envelope("Maison témoin", MessageType.HOUSE_STATUS, JsonSerializer.Serialize(_house)));
+                    break;
+                case MessageType.TOWN_ENVIRONMENT:
+                    try
+                    {
+                        _house.Cash += 99;
+                        var environment = JsonSerializer.Deserialize<TownEnvironment>(envelope.Message);
+                        time.Invoke(new Action(() =>
+                        {
+                            _house.Environment = environment;
+                            time.Text = $"Il est {environment.DateTime}";
+                        }));
+                        
+                    }
+                    catch
+                    {
+                        _logger.LogWarning("Message bizarre : " + envelope.Message);
+                    }
                     break;
             }
         }

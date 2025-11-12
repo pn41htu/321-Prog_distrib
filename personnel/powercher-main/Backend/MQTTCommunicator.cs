@@ -103,11 +103,10 @@ public class MqttCommunicator : ICommunicator
                 else
                 {
                     // Post exception to main thread
-                    syncContext?.Post(_ => throw new Exception("Exception occurred in MQTT message handler.", e), null);
+                    _logger.LogWarning("Exception occurred in MQTT message handler. Error : "+ e);
                     return Task.FromException(e);
                 }
             }
-
         };
 
         //Async => sync
@@ -144,7 +143,6 @@ public class MqttCommunicator : ICommunicator
         {
             throw new InvalidOperationException($"Failed to connect to the MQTT broker. Reason: {connectResult.ReasonString}");
         }
-
     }
 
     public void Stop()
