@@ -88,6 +88,11 @@ namespace DataModel
             this.Description = description;
             _appliances = new List<Appliance>();
         }
+
+        public void AddAppliance(ProductiveAppliance device)
+        {
+            _appliances.Add(device);
+        }
         
     }
 }

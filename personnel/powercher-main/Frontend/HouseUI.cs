@@ -36,6 +36,18 @@ namespace Frontend
 
             this.owner.Text = "pn41htu - " + _agent.NodeId.Substring(0,5);
 
+
+            ProductiveApplianceDescription description = new("Supersolar",
+                500,
+                "interdiscount",
+                "vd40",
+                "Le meilleur Panneau solaire",
+                12,
+                EnergySource.SUN,
+                "b64encodedimage");
+
+            _house.AddAppliance(new ProductiveAppliance(description, "12345"));
+
         }
         
         // Avoid race condition on txtConsole
@@ -67,7 +79,7 @@ namespace Frontend
                         time.Invoke(new Action(() =>
                         {
                             _house.Environment = environment;
-                            time.Text = $"Il est {environment.DateTime}";
+                            time.Text = $"On est le {environment.DateTime}";
                         }));
                         
                     }
