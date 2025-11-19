@@ -17,7 +17,7 @@ public sealed class FaillibleQos0Storage
     public void Store(string senderId,int data)
     {
         //Fake operational time
-        Thread.Sleep(RandomGenerator.Next(50));
+        Thread.Sleep(RandomGenerator.Next(1));
         
         //Fake failure
         if (RandomGenerator.Next(2) == 1)
