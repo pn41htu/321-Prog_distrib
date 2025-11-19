@@ -32,10 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseUI));
             txtConsole = new RichTextBox();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
             owner = new Label();
             time = new Label();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // txtConsole
@@ -57,18 +58,10 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(152, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(128, 23);
-            textBox1.TabIndex = 2;
-            textBox1.Text = "Quelle heure est-il ?";
-            // 
             // owner
             // 
             owner.AutoSize = true;
-            owner.Location = new Point(507, 47);
+            owner.Location = new Point(677, 31);
             owner.Name = "owner";
             owner.Size = new Size(68, 15);
             owner.TabIndex = 4;
@@ -79,26 +72,37 @@
             // time
             // 
             time.AutoSize = true;
-            time.Location = new Point(286, 55);
+            time.Location = new Point(477, 31);
             time.Name = "time";
             time.Size = new Size(31, 15);
             time.TabIndex = 5;
             time.Text = "time";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(49, 65);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(240, 64);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
             // 
             // HouseUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(854, 634);
+            Controls.Add(pictureBox2);
             Controls.Add(time);
             Controls.Add(owner);
-            Controls.Add(textBox1);
             Controls.Add(pictureBox1);
             Controls.Add(txtConsole);
             Name = "HouseUI";
             Text = "House";
             Load += HouseUI_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -107,10 +111,10 @@
 
         private RichTextBox txtConsole;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
         private TextBox textBox2;
         private Label label1;
         private Label owner;
         private Label time;
+        private PictureBox pictureBox2;
     }
 }
