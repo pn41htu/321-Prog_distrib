@@ -109,7 +109,7 @@ namespace Frontend
         }
         private void ComputeEnergyBalance()
         {
-            _house._appliances.ForEach(x => )
+            // _house._appliances.ForEach(x => x.GetType)
 
 
             
