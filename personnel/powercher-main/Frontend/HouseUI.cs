@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
 using System.Text.Json;
+using System.Linq;
 
 namespace Frontend
 {
@@ -48,8 +49,21 @@ namespace Frontend
 
             _house.AddAppliance(new ProductiveAppliance(description, "12345"));
 
+
+            ProductiveApplianceDescription description2 = new("Supersolar",
+                500,
+                "interdiscount",
+                "vd40",
+                "Le deuxième meilleur Panneau solaire",
+                12,
+                EnergySource.SUN,
+                "b64encodedimage");
+
+            _house.AddAppliance(new ProductiveAppliance(description, "123456"));
+
+
         }
-        
+
         // Avoid race condition on txtConsole
         public new void Show()
         {
@@ -62,7 +76,11 @@ namespace Frontend
         private void OnMessageReceived(Envelope envelope)
         {
             _logger.LogInformation(envelope.ToString());
-            
+
+
+            ComputeEnergyBalance();
+
+
             switch (envelope.Type)
             {
                 case MessageType.HELLO:
@@ -74,7 +92,6 @@ namespace Frontend
                 case MessageType.TOWN_ENVIRONMENT:
                     try
                     {
-                        _house.Cash += 99;
                         var environment = JsonSerializer.Deserialize<TownEnvironment>(envelope.Message);
                         time.Invoke(new Action(() =>
                         {
@@ -89,6 +106,13 @@ namespace Frontend
                     }
                     break;
             }
+        }
+        private void ComputeEnergyBalance()
+        {
+            _house._appliances.ForEach(x => )
+
+
+            
         }
 
 

@@ -32,7 +32,7 @@ namespace DataModel
         /// They can be of any type: Producing, Consuming or Storage
         /// </summary>
         [JsonIgnore]
-        private List<Appliance> _appliances;
+        public List<Appliance> _appliances;
 
         /// <summary>
         /// A specific storage that sits at the entry point of the electrical power of the house.
