@@ -93,6 +93,11 @@ namespace DataModel
         {
             _appliances.Add(device);
         }
-        
+        public void AddAppliance(ConsumingAppliance device)
+        {
+            _appliances.Add(device);
+        }
+
+
     }
 }
