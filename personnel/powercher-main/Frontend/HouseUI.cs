@@ -70,7 +70,6 @@ namespace Frontend
             base.Show();
             _agent.Start();
         }
-
         
 
         private void OnMessageReceived(Envelope envelope)
