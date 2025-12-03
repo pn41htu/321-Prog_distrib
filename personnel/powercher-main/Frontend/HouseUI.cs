@@ -15,6 +15,8 @@ namespace Frontend
     {
         private House _house;
         private Agent _agent;
+        private ConsumingAppliance _fridge;
+
         private readonly ILogger _logger;
 
         public HouseUI(string broker)
@@ -62,7 +64,12 @@ namespace Frontend
             _house.AddAppliance(new ProductiveAppliance(description, "123456"));
 
 
+            _fridge = new ConsumingAppliance(new ConsumingApplianceDescription("fridge", 500, "samsung", "SM3248", "this is a nice samsung fridge",
+                                                                                     1999.00, ApplianceCategory.Kitchen), "353463443523");
+            _house.AddAppliance(_fridge);
+            _fridge.TurnOn(true);
         }
+
 
         // Avoid race condition on txtConsole
         public new void Show()

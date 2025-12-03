@@ -60,7 +60,7 @@ namespace DataModel
             new(name: "Panneau solaire 375 W verre/verre", power: 375, brand: "REC", model: "Alpha 375", description: "Construction verre/verre pour une durabilité supérieure et faible dégradation.", price: 295, source: EnergySource.SUN),
 
             // Éoliennes
-            new(name: "Éolienne domestique 1 kW", power: 1000, brand: "Rutland", model: "1200", description: "Éolienne compacte pour sites ventés, usage autonome ou hybride PV.", price: 1800, source: EnergySource.WIND),
+            new(name: "Éolienne domestique 1 kW", power: 1000, brand: "Rutland", model: " bbj0", description: "Éolienne compacte pour sites ventés, usage autonome ou hybride PV.", price: 1800, source: EnergySource.WIND),
             new(name: "Éolienne domestique 3 kW", power: 3000, brand: "Hummer", model: "H3.1", description: "Générateur à aimants permanents, démarrage à faible vitesse de vent.", price: 5200, source: EnergySource.WIND),
 
             // Turbines hydrauliques (cours d’eau)
